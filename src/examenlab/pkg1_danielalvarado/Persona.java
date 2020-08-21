@@ -7,7 +7,7 @@ package examenlab.pkg1_danielalvarado;
 import java.util.ArrayList;
 
 public class Persona {
-    
+    private String identificacion;
     private String nombre;
     private int edad;
     private String sexo;
@@ -25,7 +25,8 @@ public class Persona {
         this.sexo = sexo;
     }
 
-    public Persona(String nombre, int edad, String sexo, String estadoCivil, double altura, double peso) {
+    public Persona(String identificacion, String nombre, int edad, String sexo, String estadoCivil, double altura, double peso) {
+        this.identificacion = identificacion;
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
@@ -33,6 +34,8 @@ public class Persona {
         this.altura = altura;
         this.peso = peso;
     }
+
+    
 
     public String getNombre() {
         return nombre;
@@ -92,7 +95,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", edad=" + edad + ", sexo=" + sexo + ", estadoCivil=" + estadoCivil + ", altura=" + altura + ", peso=" + peso + '}';
+        return  "" + nombre;
     }
     
     

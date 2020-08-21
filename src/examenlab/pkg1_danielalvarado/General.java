@@ -25,11 +25,15 @@ public class General extends Persona {
     }
 
     public General(String ocupacion, String horario, int semanasTrabajando, double sueldo, String nombre, int edad, String sexo, String estadoCivil, double altura, double peso) {
-        super(nombre, edad, sexo, estadoCivil, altura, peso);
+        super(ocupacion, nombre, edad, sexo, estadoCivil, altura, peso);
         this.ocupacion = ocupacion;
         this.horario = horario;
         this.semanasTrabajando = semanasTrabajando;
         this.sueldo = sueldo;
+    }
+
+    General(String text, String text0, String text1, String sexo, String estadoC, String text2, String text3, String text4, String horario, String text5, String text6) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getOcupacion() {
