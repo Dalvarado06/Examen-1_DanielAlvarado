@@ -8,10 +8,9 @@ package examenlab.pkg1_danielalvarado;
 import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -412,6 +411,12 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel17.setText("Modificar o Eliminar persona");
 
+        cb_Personas.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_PersonasItemStateChanged(evt);
+            }
+        });
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -742,6 +747,12 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear Articulo", jPanel1);
 
+        cb_Articulos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_ArticulosItemStateChanged(evt);
+            }
+        });
+
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel34.setText("Lista de Articulos");
 
@@ -968,69 +979,115 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
     private void jb_guradarArticuloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guradarArticuloMouseClicked
 
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Articulos.getModel();
-        int estado = Integer.parseInt(jt_Estado.getText());
-        int volumen = Integer.parseInt(jt_Volumen.getText());
-        int size = Integer.parseInt(jt_Size.getText());
-        int punt = Integer.parseInt(jt_Puntuacion.getText());
-        int edicion = Integer.parseInt(jt_Edicion.getText());
-        String nombre = ((Persona) cb_Personas.getSelectedItem()).getNombre();
-        if (jr_Comic.isSelected()) {
+        String password = JOptionPane.showInputDialog(this, "Ingrese la clave: ");
 
-            Comic c = new Comic(
-                    jt_Titulo.getText(),
-                    jbColor.getBackground(),
-                    jt_Descripcion.getText(),
-                    jt_Editorial.getText(),
-                    size,
-                    punt,
-                    nombre
-            );
-            c.setNumVolumen(volumen);
-            c.setDescripcionProducto(nombre);
-            c.setEstado(estado);
+        if (password.equals("clau123")) {
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Articulos.getModel();
+            int estado = Integer.parseInt(jt_Estado.getText());
+            int volumen = Integer.parseInt(jt_Volumen.getText());
+            int size = Integer.parseInt(jt_Size.getText());
+            int punt = Integer.parseInt(jt_Puntuacion.getText());
+            int edicion = Integer.parseInt(jt_Edicion.getText());
+            String nombre = ((Persona) cb_Personas.getSelectedItem()).getNombre();
+            if (jr_Comic.isSelected()) {
 
-            modelo.addElement(c);
-            cb_Articulos.setModel(modelo);
-            JOptionPane.showMessageDialog(this, "El articulo se agrego exitosamente");
-        } else if (jr_Juego.isSelected()) {
+                Comic c = new Comic(
+                        jt_Titulo.getText(),
+                        jbColor.getBackground(),
+                        jt_Descripcion.getText(),
+                        jt_Editorial.getText(),
+                        size,
+                        punt,
+                        nombre
+                );
+                c.setNumVolumen(volumen);
+                c.setDescripcionProducto(nombre);
+                c.setEstado(estado);
 
-            Juego j = new Juego(
-                    edicion,
-                    jt_Elaboracion.getText(),
-                    jt_Pais.getText(),
-                    jt_Titulo.getText(),
-                    jbColor.getBackground(),
-                    jt_Descripcion.getText(),
-                    jt_Editorial.getText(),
-                    size,
-                    punt,
-                    nombre
-            );
-            modelo.addElement(j);
-            cb_Articulos.setModel(modelo);
-            JOptionPane.showMessageDialog(this, "El articulo se agrego exitosamente");
-            
-        }else if(jr_Figura.isSelected()){
-            int garantia = Integer.parseInt(jt_Garantia.getText());
-            
-            Figura f = new Figura(
-                    jt_Desc.getText(),
-                    jt_Instrucciones.getText(),
-                    garantia,
-                    jt_Titulo.getText(),
-                    jbColor.getBackground(),
-                    jt_Descripcion.getText(),
-                    jt_Editorial.getText(),
-                    size,
-                    punt,
-                    nombre
-            );
-             modelo.addElement(f);
-            cb_Articulos.setModel(modelo);
-            JOptionPane.showMessageDialog(this, "El articulo se agrego exitosamente");
+                modelo.addElement(c);
+                cb_Articulos.setModel(modelo);
+                JOptionPane.showMessageDialog(this, "El articulo se agrego exitosamente");
+            } else if (jr_Juego.isSelected()) {
+
+                Juego j = new Juego(
+                        edicion,
+                        jt_Elaboracion.getText(),
+                        jt_Pais.getText(),
+                        jt_Titulo.getText(),
+                        jbColor.getBackground(),
+                        jt_Descripcion.getText(),
+                        jt_Editorial.getText(),
+                        size,
+                        punt,
+                        nombre
+                );
+                modelo.addElement(j);
+                cb_Articulos.setModel(modelo);
+                JOptionPane.showMessageDialog(this, "El articulo se agrego exitosamente");
+
+            } else if (jr_Figura.isSelected()) {
+                int garantia = Integer.parseInt(jt_Garantia.getText());
+
+                Figura f = new Figura(
+                        jt_Desc.getText(),
+                        jt_Instrucciones.getText(),
+                        garantia,
+                        jt_Titulo.getText(),
+                        jbColor.getBackground(),
+                        jt_Descripcion.getText(),
+                        jt_Editorial.getText(),
+                        size,
+                        punt,
+                        nombre
+                );
+                modelo.addElement(f);
+                cb_Articulos.setModel(modelo);
+                JOptionPane.showMessageDialog(this, "El articulo se agrego exitosamente");
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Se le ha denegado el acceso!");
         }
+
     }//GEN-LAST:event_jb_guradarArticuloMouseClicked
+
+    private void cb_PersonasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_PersonasItemStateChanged
+       
+        if(evt.getStateChange()== 2){
+            
+            Persona p = (Persona)cb_Personas.getSelectedItem();
+            
+            Object [] newrow = {
+               p.getNombre(),
+               p.getSexo(),
+               p.getEdad(),
+               p.getEstadoCivil()
+            };
+            
+            DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+            modelo.addRow(newrow);
+            jTable1.setModel(modelo);
+        }
+    }//GEN-LAST:event_cb_PersonasItemStateChanged
+
+    private void cb_ArticulosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_ArticulosItemStateChanged
+        
+        if(evt.getStateChange()== 2){
+            
+            Articulo a = (Articulo)cb_Articulos.getSelectedItem();
+            
+            Object[] newRow = {
+                a.getTitulo(), 
+                a.getDescripcion(),
+                a.getEditorial(),
+                a.getSize()
+            };
+            
+            DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
+            modelo.addRow(newRow);
+            jTable2.setModel(modelo);
+            
+        }
+    }//GEN-LAST:event_cb_ArticulosItemStateChanged
 
     /**
      * @param args the command line arguments
