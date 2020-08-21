@@ -23,6 +23,8 @@ public class Figura extends Articulo{
         this.instrucciones = instrucciones;
         this.garantia = garantia;
     }
+
+   
     
     
     

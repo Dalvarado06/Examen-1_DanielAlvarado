@@ -8,6 +8,8 @@ package examenlab.pkg1_danielalvarado;
 import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 
@@ -29,10 +31,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         modelo.addElement("Gerente de sucursal");
 
         cb_Cargo.setModel(modelo);
-        
-        
-        
-        
+
     }
 
     /**
@@ -288,9 +287,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
                                 .addGap(87, 87, 87)
                                 .addComponent(jLabel12)
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jb_Guardad)
-                                    .addComponent(cb_Cargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(cb_Cargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(67, 67, 67)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -316,8 +313,13 @@ public class PrincipalFrame extends javax.swing.JFrame {
                                 .addComponent(jt_Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 33, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(274, 274, 274)
-                .addComponent(jLabel9)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(274, 274, 274)
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(jb_Guardad, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -364,49 +366,45 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jr_M)
                             .addComponent(jr_F))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jr_Gerente)
+                    .addComponent(jr_General))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(jLabel9)
-                        .addGap(18, 18, 18)
+                        .addGap(24, 24, 24)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jr_Gerente)
-                            .addComponent(jr_General))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jt_Ocupacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel13))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel14)
-                                    .addComponent(jr_Morning)
-                                    .addComponent(jr_Afternoon)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jt_Usuaro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jt_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel11))))
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(cb_Cargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15)
-                            .addComponent(jt_Semanas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jt_Ocupacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16)
-                            .addComponent(jt_Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(155, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jb_Guardad)
-                        .addContainerGap())))
+                            .addComponent(jLabel14)
+                            .addComponent(jr_Morning)
+                            .addComponent(jr_Afternoon)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jt_Usuaro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jt_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))))
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(cb_Cargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15)
+                    .addComponent(jt_Semanas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jt_Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65)
+                .addComponent(jb_Guardad, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
 
         jTabbedPane1.addTab("Crear Persona", jPanel2);
@@ -522,6 +520,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         bg_Articulo.add(jr_Figura);
         jr_Figura.setText("Figura");
+        jr_Figura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jr_FiguraMouseClicked(evt);
+            }
+        });
 
         jLabel27.setText("Num Volumen");
 
@@ -556,6 +559,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jt_Garantia.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         jb_guradarArticulo.setText("Guardar");
+        jb_guradarArticulo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_guradarArticuloMouseClicked(evt);
+            }
+        });
 
         jLabel35.setText("Edicion");
 
@@ -820,7 +828,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
             jt_Password.setEditable(false);
             jt_Usuaro.setEditable(false);
             cb_Cargo.setEditable(false);
-            
+
             jt_Ocupacion.setEditable(true);
             jt_Semanas.setEditable(true);
             jt_Sueldo.setEditable(true);
@@ -834,7 +842,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
             jt_Ocupacion.setEditable(false);
             jt_Semanas.setEditable(false);
             jt_Sueldo.setEditable(false);
-            
+
             jt_Password.setEditable(true);
             jt_Usuaro.setEditable(true);
             cb_Cargo.setEditable(true);
@@ -873,8 +881,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         jt_Usuaro.getText(),
                         jt_Password.getText()
                 );
-                
-                g.setCargo((String)cb_Cargo.getSelectedItem());
+
+                g.setCargo((String) cb_Cargo.getSelectedItem());
                 DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Cargo.getModel();
                 modelo.addElement(g);
                 cb_Personas.setModel(modelo);
@@ -902,13 +910,13 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         jt_Semanas.getText(),
                         jt_Sueldo.getText()
                 );
-                
+
                 DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Cargo.getModel();
                 modelo.addElement(ge);
                 cb_Personas.setModel(modelo);
                 cb_Personas1.setModel(modelo);
                 personas.add(ge);
-                
+
             }
         } else {
             JOptionPane.showMessageDialog(this, "No se le permite el acceso");
@@ -927,7 +935,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jt_Pais.setEditable(false);
         jt_Instrucciones.setEditable(false);
         jt_Garantia.setEditable(false);
-        
+
         jt_Volumen.setEditable(true);
         jt_Desc.setEditable(true);
         jt_Estado.setEditable(true);
@@ -937,7 +945,92 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jt_Volumen.setEditable(false);
         jt_Desc.setEditable(false);
         jt_Estado.setEditable(false);
+        jt_Instrucciones.setEditable(false);
+        jt_Garantia.setEditable(false);
+
+        jt_Edicion.setEditable(true);
+        jt_Elaboracion.setEditable(true);
+        jt_Pais.setEditable(true);
     }//GEN-LAST:event_jr_JuegoMouseClicked
+
+    private void jr_FiguraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jr_FiguraMouseClicked
+        jt_Volumen.setEditable(false);
+        jt_Desc.setEditable(false);
+        jt_Estado.setEditable(false);
+        jt_Edicion.setEditable(false);
+        jt_Elaboracion.setEditable(false);
+        jt_Pais.setEditable(false);
+
+        jt_Desc.setEditable(true);
+        jt_Instrucciones.setEditable(true);
+        jt_Garantia.setEditable(true);
+    }//GEN-LAST:event_jr_FiguraMouseClicked
+
+    private void jb_guradarArticuloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guradarArticuloMouseClicked
+
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Articulos.getModel();
+        int estado = Integer.parseInt(jt_Estado.getText());
+        int volumen = Integer.parseInt(jt_Volumen.getText());
+        int size = Integer.parseInt(jt_Size.getText());
+        int punt = Integer.parseInt(jt_Puntuacion.getText());
+        int edicion = Integer.parseInt(jt_Edicion.getText());
+        String nombre = ((Persona) cb_Personas.getSelectedItem()).getNombre();
+        if (jr_Comic.isSelected()) {
+
+            Comic c = new Comic(
+                    jt_Titulo.getText(),
+                    jbColor.getBackground(),
+                    jt_Descripcion.getText(),
+                    jt_Editorial.getText(),
+                    size,
+                    punt,
+                    nombre
+            );
+            c.setNumVolumen(volumen);
+            c.setDescripcionProducto(nombre);
+            c.setEstado(estado);
+
+            modelo.addElement(c);
+            cb_Articulos.setModel(modelo);
+            JOptionPane.showMessageDialog(this, "El articulo se agrego exitosamente");
+        } else if (jr_Juego.isSelected()) {
+
+            Juego j = new Juego(
+                    edicion,
+                    jt_Elaboracion.getText(),
+                    jt_Pais.getText(),
+                    jt_Titulo.getText(),
+                    jbColor.getBackground(),
+                    jt_Descripcion.getText(),
+                    jt_Editorial.getText(),
+                    size,
+                    punt,
+                    nombre
+            );
+            modelo.addElement(j);
+            cb_Articulos.setModel(modelo);
+            JOptionPane.showMessageDialog(this, "El articulo se agrego exitosamente");
+            
+        }else if(jr_Figura.isSelected()){
+            int garantia = Integer.parseInt(jt_Garantia.getText());
+            
+            Figura f = new Figura(
+                    jt_Desc.getText(),
+                    jt_Instrucciones.getText(),
+                    garantia,
+                    jt_Titulo.getText(),
+                    jbColor.getBackground(),
+                    jt_Descripcion.getText(),
+                    jt_Editorial.getText(),
+                    size,
+                    punt,
+                    nombre
+            );
+             modelo.addElement(f);
+            cb_Articulos.setModel(modelo);
+            JOptionPane.showMessageDialog(this, "El articulo se agrego exitosamente");
+        }
+    }//GEN-LAST:event_jb_guradarArticuloMouseClicked
 
     /**
      * @param args the command line arguments

@@ -16,12 +16,21 @@ public class Comic extends Articulo{
     public Comic() {
     }
 
+    public Comic(String titulo, Color color, String descripcion, String editorial, double size, double puntuacion, String registro) {
+        super(titulo, color, descripcion, editorial, size, puntuacion, registro);
+    }
+    
+    
+
     public Comic(int numVolumen, String descripcionProducto, int estado, String titulo, Color color, String descripcion, String editorial, double size, double puntuacion, String registro) {
         super(titulo, color, descripcion, editorial, size, puntuacion, registro);
         this.numVolumen = numVolumen;
         this.descripcionProducto = descripcionProducto;
         this.estado = estado;
     }
+
+   
+    
 
     public int getNumVolumen() {
         return numVolumen;
@@ -46,7 +55,8 @@ public class Comic extends Articulo{
     public void setEstado(int estado) {
         this.estado = estado;
     }
-
+    
+    
     @Override
     public String toString() {
         return "Comic{" + "numVolumen=" + numVolumen + ", descripcionProducto=" + descripcionProducto + ", estado=" + estado + '}';
