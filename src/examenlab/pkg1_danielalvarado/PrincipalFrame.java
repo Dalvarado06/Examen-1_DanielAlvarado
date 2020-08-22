@@ -90,6 +90,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
         cb_Personas = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jbEliminar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -135,6 +137,20 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jbEliminar2 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        cb_Mensaje = new javax.swing.JComboBox<>();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jt_Emisor = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        jt_Receptor = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jt_Cuerpo = new javax.swing.JTextArea();
+        jb_GuardarMensaje = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -310,7 +326,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel16)
                                 .addGap(28, 28, 28)
                                 .addComponent(jt_Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addGap(0, 69, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -365,7 +381,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jr_M)
                             .addComponent(jr_F))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -422,14 +438,14 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Sexo", "Edad", "Estado Cvil"
+                "Nombre", "Sexo", "Usuario /Ocupacion", "Estado Cvil"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -442,10 +458,28 @@ public class PrincipalFrame extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(jTable1);
 
+        jbEliminar.setText("Eliminar");
+        jbEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbEliminarMouseClicked(evt);
+            }
+        });
+
+        jButton1.setText("Modificar columna 3");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 90, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -453,12 +487,13 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         .addComponent(cb_Personas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(219, 219, 219)
-                        .addComponent(jLabel17)))
+                        .addComponent(jLabel17))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(jbEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 68, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -467,9 +502,13 @@ public class PrincipalFrame extends javax.swing.JFrame {
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cb_Personas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(37, 37, 37)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(285, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Mod o Elim Persona", jPanel3);
@@ -761,14 +800,14 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Titulo", "Descripcion", "Editorial", "Size"
+                "Titulo", "Descripcion", "Edicion/Vol/Garantia", "Size"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -781,23 +820,44 @@ public class PrincipalFrame extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(jTable2);
 
+        jbEliminar2.setText("Eliminar");
+        jbEliminar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbEliminar2MouseClicked(evt);
+            }
+        });
+
+        jButton2.setText("Modificar columna 3");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 28, Short.MAX_VALUE)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(cb_Articulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(jLabel34)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 88, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(cb_Articulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(283, 283, 283)
+                                .addComponent(jLabel34))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(101, 101, 101)
+                                .addComponent(jbEliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(51, 51, 51)
+                                .addComponent(jButton2)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -806,12 +866,96 @@ public class PrincipalFrame extends javax.swing.JFrame {
                 .addComponent(jLabel34)
                 .addGap(18, 18, 18)
                 .addComponent(cb_Articulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbEliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Mod o Elim Articulo", jPanel4);
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel36.setText("Mandar Mensaje");
+
+        jLabel37.setText("Mandar a:");
+
+        jLabel38.setText("Emisor");
+
+        jLabel39.setText("Receptor");
+
+        jLabel40.setText("Cuerpo");
+
+        jt_Cuerpo.setColumns(20);
+        jt_Cuerpo.setRows(5);
+        jScrollPane6.setViewportView(jt_Cuerpo);
+
+        jb_GuardarMensaje.setText("Enviar");
+        jb_GuardarMensaje.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_GuardarMensajeMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 96, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(279, 279, 279)
+                        .addComponent(jLabel36))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel37)
+                            .addComponent(jLabel38)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel40))
+                        .addGap(46, 46, 46)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cb_Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jt_Emisor)
+                            .addComponent(jt_Receptor, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(293, 293, 293)
+                        .addComponent(jb_GuardarMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel36)
+                .addGap(50, 50, 50)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(cb_Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(jt_Emisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(jt_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61)
+                .addComponent(jLabel40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jb_GuardarMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Mandar un Mensaje", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -819,15 +963,15 @@ public class PrincipalFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(125, 125, 125)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 746, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -862,7 +1006,9 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
     private void jb_GuardadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_GuardadMouseClicked
         String password = JOptionPane.showInputDialog(this, "Ingrese la password");
-
+        int edad = Integer.parseInt(jF_edad.getText());
+        double altura = Double.parseDouble(jt_Altura.getText());
+        double peso = Double.parseDouble(jt_Peso.getText());
         if (password.equals("clau123")) {
             String sexo = "";
             String estadoC = "";
@@ -882,25 +1028,39 @@ public class PrincipalFrame extends javax.swing.JFrame {
             if (jr_Gerente.isSelected()) {
 
                 Gerente g = new Gerente(
+                        jt_Usuaro.getText(),
+                        jt_Password.getText(),
+                        (String) cb_Cargo.getSelectedItem(),
                         jt_Identificacion.getText(),
                         jt_Nombre.getText(),
-                        jF_edad.getText(),
+                        edad,
                         sexo,
                         estadoC,
-                        jt_Altura.getText(),
-                        jt_Peso.getText(),
-                        jt_Usuaro.getText(),
-                        jt_Password.getText()
+                        altura,
+                        peso
                 );
 
-                g.setCargo((String) cb_Cargo.getSelectedItem());
-                DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Cargo.getModel();
+                jt_Usuaro.setText("");
+                jt_Password.setText("");
+                jt_Identificacion.setText("");
+                jt_Nombre.setText("");
+                jF_edad.setText("");
+                jt_Altura.setText("");
+                jt_Peso.setText("");
+                jr_M.setSelected(true);
+                jr_Casado.setSelected(false);
+                jr_General.setSelected(true);
+
+                DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Personas.getModel();
                 modelo.addElement(g);
                 cb_Personas.setModel(modelo);
                 cb_Personas1.setModel(modelo);
+                cb_Mensaje = cb_Personas;
                 personas.add(g);
             } else if (jr_General.isSelected()) {
+                int semanas = Integer.parseInt(jt_Semanas.getText());
                 String horario = "";
+                double sueldo = Double.parseDouble(jt_Sueldo.getText());
 
                 if (jr_Morning.isSelected()) {
                     horario = "7AM a 12PM";
@@ -909,23 +1069,39 @@ public class PrincipalFrame extends javax.swing.JFrame {
                 }
 
                 General ge = new General(
-                        jt_Identificacion.getText(),
-                        jt_Nombre.getText(),
-                        jF_edad.getText(),
-                        sexo,
-                        estadoC,
-                        jt_Altura.getText(),
-                        jt_Peso.getText(),
                         jt_Ocupacion.getText(),
                         horario,
-                        jt_Semanas.getText(),
-                        jt_Sueldo.getText()
+                        semanas,
+                        sueldo,
+                        jt_Identificacion.getText(),
+                        jt_Nombre.getText(),
+                        edad,
+                        sexo,
+                        estadoC,
+                        altura,
+                        peso
                 );
 
-                DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Cargo.getModel();
+                jt_Usuaro.setText("");
+                jt_Password.setText("");
+                jt_Identificacion.setText("");
+                jt_Nombre.setText("");
+                jF_edad.setText("");
+                jt_Altura.setText("");
+                jt_Peso.setText("");
+                jt_Ocupacion.setText("");
+                jt_Semanas.setText("");
+                jt_Sueldo.setText("");
+                jr_M.setSelected(true);
+                jr_Casado.setSelected(false);
+                jr_General.setSelected(true);
+                jr_Morning.setSelected(true);
+
+                DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Personas.getModel();
                 modelo.addElement(ge);
                 cb_Personas.setModel(modelo);
                 cb_Personas1.setModel(modelo);
+                cb_Mensaje = cb_Personas;
                 personas.add(ge);
 
             }
@@ -1001,8 +1177,16 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         nombre
                 );
                 c.setNumVolumen(volumen);
-                c.setDescripcionProducto(nombre);
+                c.setDescripcionProducto(jt_Desc.getText());
                 c.setEstado(estado);
+
+                jt_Volumen.setText("");
+                jt_Titulo.setText("");
+                jt_Descripcion.setText("");
+                jt_Editorial.setText("");
+                jt_Size.setText("");
+                jt_Puntuacion.setText("");
+                jt_Desc.setText("");
 
                 modelo.addElement(c);
                 cb_Articulos.setModel(modelo);
@@ -1021,6 +1205,14 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         punt,
                         nombre
                 );
+
+                jt_Size.setText("");
+                jt_Puntuacion.setText("");
+                jt_Elaboracion.setText("");
+                jt_Pais.setText("");
+                jt_Titulo.setText("");
+                jt_Descripcion.setText("");
+
                 modelo.addElement(j);
                 cb_Articulos.setModel(modelo);
                 JOptionPane.showMessageDialog(this, "El articulo se agrego exitosamente");
@@ -1040,54 +1232,171 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         punt,
                         nombre
                 );
+
+                jt_Desc.setText("");
+                jt_Descripcion.setText("");
+                jt_Editorial.setText("");
+                jt_Titulo.setText("");
+                jt_Garantia.setText("");
+                jt_Instrucciones.setText("");
+
                 modelo.addElement(f);
                 cb_Articulos.setModel(modelo);
                 JOptionPane.showMessageDialog(this, "El articulo se agrego exitosamente");
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Se le ha denegado el acceso!");
         }
 
     }//GEN-LAST:event_jb_guradarArticuloMouseClicked
 
     private void cb_PersonasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_PersonasItemStateChanged
-       
-        if(evt.getStateChange()== 2){
-            
-            Persona p = (Persona)cb_Personas.getSelectedItem();
-            
-            Object [] newrow = {
-               p.getNombre(),
-               p.getSexo(),
-               p.getEdad(),
-               p.getEstadoCivil()
-            };
-            
-            DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-            modelo.addRow(newrow);
-            jTable1.setModel(modelo);
+
+        if (evt.getStateChange() == 1) {
+
+            Persona p = (Persona) cb_Personas.getSelectedItem();
+
+            if (p instanceof Gerente) {
+                Object[] newrow = {
+                    p.getNombre(),
+                    p.getSexo(),
+                    ((Gerente) p).getNombreUsuario(),
+                    p.getEstadoCivil()
+                };
+                DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+                modelo.addRow(newrow);
+                jTable1.setModel(modelo);
+            } else if (p instanceof General) {
+                Object[] newrow = {
+                    p.getNombre(),
+                    p.getSexo(),
+                    ((General) p).getOcupacion(),
+                    p.getEstadoCivil()
+                };
+
+                DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+                modelo.addRow(newrow);
+                jTable1.setModel(modelo);
+            }
         }
     }//GEN-LAST:event_cb_PersonasItemStateChanged
 
     private void cb_ArticulosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_ArticulosItemStateChanged
-        
-        if(evt.getStateChange()== 2){
-            
-            Articulo a = (Articulo)cb_Articulos.getSelectedItem();
-            
-            Object[] newRow = {
-                a.getTitulo(), 
-                a.getDescripcion(),
-                a.getEditorial(),
-                a.getSize()
-            };
-            
-            DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
-            modelo.addRow(newRow);
-            jTable2.setModel(modelo);
-            
+
+        if (evt.getStateChange() == 1) {
+
+            Articulo a = (Articulo) cb_Articulos.getSelectedItem();
+
+            if (a instanceof Comic) {
+                Object[] newRow = {
+                    a.getTitulo(),
+                    a.getDescripcion(),
+                    ((Comic) a).getNumVolumen(),
+                    a.getSize()
+                };
+
+                DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
+                modelo.addRow(newRow);
+                jTable2.setModel(modelo);
+            } else if (a instanceof Juego) {
+                Object[] newRow = {
+                    a.getTitulo(),
+                    a.getDescripcion(),
+                    ((Juego) a).getEdicionJuego(),
+                    a.getSize()
+                };
+
+                DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
+                modelo.addRow(newRow);
+                jTable2.setModel(modelo);
+            } else if (a instanceof Figura) {
+                Object[] newRow = {
+                    a.getTitulo(),
+                    a.getDescripcion(),
+                    ((Figura) a).getGarantia(),
+                    a.getSize()
+                };
+
+                DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
+                modelo.addRow(newRow);
+                jTable2.setModel(modelo);
+            }
+
         }
     }//GEN-LAST:event_cb_ArticulosItemStateChanged
+
+    private void jbEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbEliminarMouseClicked
+
+        String password = JOptionPane.showInputDialog(this, "Ingrese la clave: ");
+
+        if (password.equals("clau123")) {
+            if (jTable1.getSelectedRow() >= 0) {
+                DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+                modelo.removeRow(jTable1.getSelectedRow());
+                jTable1.setModel(modelo);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Se le nego el acceso");
+        }
+    }//GEN-LAST:event_jbEliminarMouseClicked
+
+    private void jbEliminar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbEliminar2MouseClicked
+        String password = JOptionPane.showInputDialog(this, "Ingrese la clave: ");
+
+        if (password.equals("clau123")) {
+            if (jTable2.getSelectedRow() >= 0) {
+                DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
+                modelo.removeRow(jTable2.getSelectedRow());
+                jTable2.setModel(modelo);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Se le nego el acceso");
+        }
+    }//GEN-LAST:event_jbEliminar2MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        if(jTable1.getSelectedRow() >= 0){
+           DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+          
+           String obj = JOptionPane.showInputDialog(this, "Ingrese nuevo Usuario / Ocupacion  : ");
+            modelo.setValueAt(obj, jTable1.getSelectedRow(), 2);
+          
+           jTable1.setModel(modelo);
+        }   
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+         if(jTable2.getSelectedRow() >= 0){
+           DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
+          
+           String obj = JOptionPane.showInputDialog(this, "Ingrese nuevo edicion / volumen/ tiempo de garantia  : ");
+           int mod = Integer.parseInt(obj);
+            modelo.setValueAt(mod, jTable1.getSelectedRow(), 2);
+          
+           jTable2.setModel(modelo);
+        }   
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jb_GuardarMensajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_GuardarMensajeMouseClicked
+        
+        Mensaje m = new Mensaje(
+                jt_Emisor.getText(),
+                jt_Receptor.getText(),
+                jt_Cuerpo.getText()
+        );
+        
+        int x = cb_Mensaje.getSelectedIndex();
+        
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Mensaje.getModel();
+        
+        ((Persona)modelo.getElementAt(x)).getBuzon().add(m);
+        
+        JOptionPane.showMessageDialog(this, "El correo se envio exitosamente" );
+        
+        jt_Receptor.setText("");
+        jt_Emisor.setText("");
+        jt_Cuerpo.setText("");
+    }//GEN-LAST:event_jb_GuardarMensajeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1100,7 +1409,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -1132,8 +1441,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bg_TipoPersona;
     private javax.swing.JComboBox<String> cb_Articulos;
     private javax.swing.JComboBox<String> cb_Cargo;
+    private javax.swing.JComboBox<String> cb_Mensaje;
     private javax.swing.JComboBox<String> cb_Personas;
     private javax.swing.JComboBox<String> cb_Personas1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JFormattedTextField jF_edad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1164,7 +1476,12 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1174,16 +1491,21 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JButton jbColor;
+    private javax.swing.JButton jbEliminar;
+    private javax.swing.JButton jbEliminar2;
     private javax.swing.JButton jb_Guardad;
+    private javax.swing.JButton jb_GuardarMensaje;
     private javax.swing.JButton jb_guradarArticulo;
     private javax.swing.JRadioButton jr_Afternoon;
     private javax.swing.JRadioButton jr_Casado;
@@ -1197,11 +1519,13 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton jr_Morning;
     private javax.swing.JRadioButton jr_Soltero;
     private javax.swing.JFormattedTextField jt_Altura;
+    private javax.swing.JTextArea jt_Cuerpo;
     private javax.swing.JTextArea jt_Desc;
     private javax.swing.JTextArea jt_Descripcion;
     private javax.swing.JFormattedTextField jt_Edicion;
     private javax.swing.JTextField jt_Editorial;
     private javax.swing.JTextField jt_Elaboracion;
+    private javax.swing.JTextField jt_Emisor;
     private javax.swing.JFormattedTextField jt_Estado;
     private javax.swing.JFormattedTextField jt_Garantia;
     private javax.swing.JTextField jt_Identificacion;
@@ -1212,6 +1536,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jt_Password;
     private javax.swing.JFormattedTextField jt_Peso;
     private javax.swing.JFormattedTextField jt_Puntuacion;
+    private javax.swing.JTextField jt_Receptor;
     private javax.swing.JFormattedTextField jt_Semanas;
     private javax.swing.JFormattedTextField jt_Size;
     private javax.swing.JFormattedTextField jt_Sueldo;

@@ -22,16 +22,16 @@ public class Gerente extends Persona {
         this.cargo = cargo;
     }
 
-    public Gerente(String nombreUsuario, String password, String cargo, String nombre, int edad, String sexo, String estadoCivil, double altura, double peso) {
-        super(estadoCivil, nombre, edad, sexo, estadoCivil, altura, peso);
+    public Gerente(String nombreUsuario, String password, String cargo, String identificacion, String nombre, int edad, String sexo, String estadoCivil, double altura, double peso) {
+        super(identificacion, nombre, edad, sexo, estadoCivil, altura, peso);
         this.nombreUsuario = nombreUsuario;
         this.password = password;
         this.cargo = cargo;
     }
 
-    Gerente(String text, String text0, String text1, String sexo, String estadoC, String text2, String text3, String text4, String text5) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+
+    
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -59,7 +59,7 @@ public class Gerente extends Persona {
 
     @Override
     public String toString() {
-        return "Gerente{" + "nombreUsuario=" + nombreUsuario + ", password=" + password + ", cargo=" + cargo + '}';
+        return ""+ super.toString();
     }
     
     
