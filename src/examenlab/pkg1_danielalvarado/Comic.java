@@ -53,7 +53,9 @@ public class Comic extends Articulo{
     }
 
     public void setEstado(int estado) {
-        this.estado = estado;
+        if(estado <= 10){
+            this.estado = estado;
+        }
     }
     
     
